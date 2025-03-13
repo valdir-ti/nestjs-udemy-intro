@@ -10,3 +10,11 @@ GET {{baseUrl}}/recados
 
 ### Retorna somente um recado
 GET {{baseUrl}}/recados/18
+
+### Cria um novo recado
+POST {{baseUrl}}/recados
+Content-Type: application/json
+
+{
+   "message": "Novo Recado dois"
+}
