@@ -6,7 +6,7 @@ GET {{baseUrl}}
 GET {{baseUrl}}/conceitos-automaticos
 
 ### Retorna todos os recados
-GET {{baseUrl}}/recados
+GET {{baseUrl}}/recados/?page=3&limit=15
 
 ### Retorna somente um recado
 GET {{baseUrl}}/recados/18

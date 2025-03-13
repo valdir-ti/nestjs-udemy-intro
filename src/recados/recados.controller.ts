@@ -1,10 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query} from '@nestjs/common';
 
 @Controller('recados')
 export class RecadosController {
     @Get()
-    findAll(){
-        return 'Retorna todos os recados'
+    findAll(@Query() pagination: any){
+        const { limit = 10, page = 1} = pagination
+        console.log({limit, page})
+        return `Retorna todos os recados. Limit=${limit}, page=${page}`
     }
 
     @Get(':id')    
