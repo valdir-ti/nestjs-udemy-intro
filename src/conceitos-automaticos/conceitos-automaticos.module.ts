@@ -4,6 +4,6 @@ import { ConceitosAutomaticosService } from './conceitos-automaticos.service';
 
 @Module({
   controllers: [ConceitosAutomaticosController],
-  providers: [ConceitosAutomaticosService]
+  providers: [ConceitosAutomaticosService],
 })
 export class ConceitosAutomaticosModule {}
