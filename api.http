@@ -18,3 +18,14 @@ Content-Type: application/json
 {
    "message": "Novo Recado dois"
 }
+
+### Atualiza um recado
+PUT {{baseUrl}}/recados/14
+Content-Type: application/json
+
+{
+   "message": "Atualiza o Recado"
+}
+
+### Deleta um recado
+DELETE {{baseUrl}}/recados/19
