@@ -4,3 +4,9 @@ GET {{baseUrl}}
 
 ###
 GET {{baseUrl}}/conceitos-automaticos
+
+### Retorna todos os recados
+GET {{baseUrl}}/recados
+
+### Retorna somente um recado
+GET {{baseUrl}}/recados/18
