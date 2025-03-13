@@ -4,3 +4,28 @@ GET {{baseUrl}}
 
 ###
 GET {{baseUrl}}/conceitos-automaticos
+
+### Retorna todos os recados
+GET {{baseUrl}}/recados/?page=3&limit=15
+
+### Retorna somente um recado
+GET {{baseUrl}}/recados/18
+
+### Cria um novo recado
+POST {{baseUrl}}/recados
+Content-Type: application/json
+
+{
+   "message": "Novo Recado dois"
+}
+
+### Atualiza um recado
+PUT {{baseUrl}}/recados/14
+Content-Type: application/json
+
+{
+   "message": "Atualiza o Recado"
+}
+
+### Deleta um recado
+DELETE {{baseUrl}}/recados/19
