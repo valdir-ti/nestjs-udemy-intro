@@ -12,8 +12,13 @@ import {
 } from '@nestjs/common';
 import { RecadosService } from './recados.service';
 
-type TRecado = {
-  message: string;
+export type TRecado = {
+  id: number;
+  texto: string;
+  de: string;
+  para: string;
+  lido: boolean;
+  data: Date;
 };
 
 export type TRecadoPagination = {
@@ -29,30 +34,30 @@ export class RecadosController {
   @Get()
   findAll(@Query() pagination: TRecadoPagination) {
     const { limit = 10, page = 1 } = pagination;
-    return this.recadosService.getAll({ limit, page });
+    return this.recadosService.findAll({ limit, page });
   }
 
   @HttpCode(HttpStatus.OK)
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return `Retorna somente um recado ${id}`;
+    return this.recadosService.findOne(id);
   }
 
   @HttpCode(HttpStatus.CREATED)
   @Post()
-  create(@Body() body: TRecado) {
-    return `Cria um novo recado : ${body?.message}`;
+  create(@Body() body: any) {
+    return this.recadosService.create(body);
   }
 
   @HttpCode(HttpStatus.CREATED)
   @Put(':id')
   update(@Param('id') id: string, @Body() body: TRecado) {
-    return `Atualiza o recado: ${id} com a nova mensagem: '${body?.message}'`;
+    return this.recadosService.update(id, body);
   }
 
   @HttpCode(HttpStatus.OK)
   @Delete(':id')
   delete(@Param('id') id: string) {
-    return `Deleta o recado: ${id}`;
+    return this.recadosService.remove(id);
   }
 }

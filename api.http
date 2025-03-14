@@ -5,27 +5,35 @@ GET {{baseUrl}}
 ###
 GET {{baseUrl}}/conceitos-automaticos
 
-### Retorna todos os recados
+### Lista todos os recados
 GET {{baseUrl}}/recados/?page=7&limit=12
 
 ### Retorna somente um recado
-GET {{baseUrl}}/recados/18
+GET {{baseUrl}}/recados/2
 
 ### Cria um novo recado
 POST {{baseUrl}}/recados
 Content-Type: application/json
 
 {
-   "message": "Novo Recado dois"
-}
+    "texto": "Recado de teste 2",
+    "de": "José",
+    "para": "Mário",
+    "lido": false,
+    "data": "2025-03-14T11:11:39.542Z"
+  }
 
 ### Atualiza um recado
-PUT {{baseUrl}}/recados/14
+PUT {{baseUrl}}/recados/1
 Content-Type: application/json
 
 {
-   "message": "Atualiza o Recado"
-}
+    "texto": "Recado de teste atualizado",
+    "de": "Maria",
+    "para": "Joana",
+    "lido": true,
+    "data": "2025-03-14T17:11:39.542Z"
+  }
 
 ### Deleta um recado
-DELETE {{baseUrl}}/recados/19
+DELETE {{baseUrl}}/recados/1
